@@ -21,6 +21,9 @@ class Queue {
   Queue(int capacity) : capacity(capacity) {
     queue = new Type[capacity];
   }
+  ~Queue() {
+    delete[](queue);
+  }
   bool push_back(Type value) {
     if (last == capacity) return false;
 
